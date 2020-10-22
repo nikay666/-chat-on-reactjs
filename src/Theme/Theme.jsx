@@ -17,7 +17,9 @@ const themeDark = createMuiTheme({
 const Theme = (props) => {
     const { darkMode ,children}  = props
     const  defaultTheme = darkMode ? themeDark : theme
+    console.log(defaultTheme.palette)
     return (
+     
         <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
     )
 }
