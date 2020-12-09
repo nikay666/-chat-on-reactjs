@@ -1,8 +1,8 @@
-import { makeStyles, TextField, withTheme } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
 import React from 'react'
 
 
-const Input = ({...props}) => {
+const InputСustom = ({...props}) => {
 
     return (
        <TextField
@@ -16,4 +16,4 @@ const Input = ({...props}) => {
     )
 }
 
-export default Input
+export default InputСustom

@@ -14,7 +14,7 @@ const  useStyles = makeStyles({
   })
 
   
-const Button = (props) => {
+const ButtonСustom = (props) => {
 
     const classes = useStyles()
     return (
@@ -27,7 +27,7 @@ const Button = (props) => {
     )
 }
 
-Button.propTypes = {
+ButtonСustom.propTypes = {
     className: propTypes.string
 }
-export default Button;
+export default ButtonСustom;
