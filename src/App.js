@@ -2,6 +2,7 @@ import {  createMuiTheme, Switch, ThemeProvider } from '@material-ui/core';
 import React, { useState } from 'react';
 import './App.scss';
 import { Auth } from './pages/Auth/Auth';
+import { Registration } from './pages/Auth/Registration';
 
  
 
@@ -23,7 +24,8 @@ function App() {
           onChange={() => setDarkMode(!darkMode)}
         />
       </div>
-      <Auth palette={theme.palette}/>
+      {/* <Auth palette={theme.palette}/> */}
+      <Registration/>
     </div>
     </ThemeProvider>
   );
