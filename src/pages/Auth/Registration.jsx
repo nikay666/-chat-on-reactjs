@@ -1,9 +1,11 @@
 import { Card, CardContent, makeStyles, Paper, Switch, Typography } from '@material-ui/core'
 import React from 'react'
+import { useState } from 'react'
 import ButtonСustom from '../../components/ButtonСustom/ButtonСustom'
 import InputСustom from '../../components/Input/InputСustom'
 import './auth.scss'
 
+import InfoIcon from '@material-ui/icons/Info';
 
 const  useStyles = makeStyles({
     root:  {
@@ -18,6 +20,7 @@ const  useStyles = makeStyles({
   
 export const Registration = () => {
     const classes = useStyles()
+    const [confirm, setConfirm] = useState(false)
 
     return (
         <section className='auth'>
@@ -30,19 +33,35 @@ export const Registration = () => {
                 </div>
 
             <Card className='auth__form' elevation={8}>
-                <CardContent component='form' >
-                <InputСustom placeholder='E-mail' label='Email'/>
-                <InputСustom  placeholder='Ваше имя' label='Ваше имя' />
-                <InputСustom  placeholder='Пароль' label='Пароль' />
-                <InputСustom  placeholder='Повторить пароль' label='Повторить пароль' />
-                <ButtonСustom 
-                    color='primary'
-                    variant="contained"
-                    size='large'
-                    fullWidth={true}
-                >Зарегистрироваться</ButtonСustom>
-                    <ButtonСustom variant="text" color="primary">Войти в аккаунт</ButtonСustom>
-                </CardContent>
+
+                    <CardContent component='form' >
+                        {
+                            confirm ?  
+                            
+                            <>
+                                <InfoIcon className='icon-auth' color="primary"  fontSize="large" />
+                                <Typography variant='h3' color='textPrimary'>Подтвердите свой аккаунт</Typography>
+                                <Typography  color='textSecondary'>На Вашу почту отправлено письмо с ссылкой на подтверждениие аккаунта.</Typography>
+                            </> 
+                            :
+                            <>
+                                <InputСustom placeholder='E-mail' label='Email'/>
+                                <InputСustom  placeholder='Ваше имя' label='Ваше имя' />
+                                <InputСustom  placeholder='Пароль' label='Пароль' />
+                                <InputСustom  placeholder='Повторить пароль' label='Повторить пароль' />
+                                <ButtonСustom 
+                                    color='primary'
+                                    variant="contained"
+                                    size='large'
+                                    fullWidth={true}
+                                >Зарегистрироваться</ButtonСustom>
+                        
+                            </>
+                            
+                        }
+                        <ButtonСustom variant="text" color="primary" onClick={()  =>  setConfirm(!confirm)} >Войти в аккаунт</ButtonСustom>
+                    </CardContent>
+
             </Card>
         </Paper>
       </section>

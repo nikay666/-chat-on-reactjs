@@ -10,16 +10,35 @@
     &__title{
         margin-bottom: 30px;
 
-        h2{
-            font-size: 28px;
+        @media (max-width: 600px) {
+            width: 90%;
         }
+    }
+
+    h2{
+        font-size: 28px;
+    }
+
+    h3{
+        font-size: 24px;
+        margin-bottom: 1rem;
+    }
+
+    .icon-auth{
+        margin-bottom: 1rem;
     }
 
     &__form{
         width: 430px;
         padding: 25px;
+        min-height: 530px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         @media (max-width: 600px) {
+            padding: 15px;
             width: 90%;
         }
     }
