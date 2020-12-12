@@ -1,5 +1,4 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-import { purple } from '@material-ui/core/colors'
 import React, { useState } from 'react'
 
 const theme = createMuiTheme({
@@ -10,6 +9,11 @@ const theme = createMuiTheme({
 const themeDark = createMuiTheme({
     palette: {
         type: 'dark',
+        primary: {
+            light: '#a6d4fa',
+            main: '#90caf9',
+            dark: '#648dae'
+        }
     }
 })
 
