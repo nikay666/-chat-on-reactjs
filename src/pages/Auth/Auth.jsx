@@ -31,9 +31,20 @@ export const Auth = () => {
 
             <Card className='auth__form' elevation={8}>
                 <CardContent component='form' >
-                <InputСustom placeholder='user@gmail.com' label='Логин'/>
-                <InputСustom  placeholder='Пароль' label='Пароль' />
+                <InputСustom  
+                    required
+                    type='email'
+                    placeholder='user@gmail.com' 
+                    label='Логин'
+                />
+                <InputСustom  
+                    required
+                    type='password'
+                    placeholder='Пароль' 
+                    label='Пароль' 
+                />
                 <ButtonСustom 
+                    type='submit'
                     color='primary'
                     variant="contained"
                     size='large'

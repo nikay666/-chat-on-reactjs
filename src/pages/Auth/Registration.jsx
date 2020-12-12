@@ -17,7 +17,8 @@ const  useStyles = makeStyles({
       justifyContent: 'center',
     },
   })
-  
+
+
 export const Registration = () => {
     const classes = useStyles()
     const [confirm, setConfirm] = useState(false)
@@ -45,11 +46,32 @@ export const Registration = () => {
                             </> 
                             :
                             <>
-                                <InputСustom placeholder='E-mail' label='Email'/>
-                                <InputСustom  placeholder='Ваше имя' label='Ваше имя' />
-                                <InputСustom  placeholder='Пароль' label='Пароль' />
-                                <InputСustom  placeholder='Повторить пароль' label='Повторить пароль' />
+                                <InputСustom 
+                                    required
+                                    type='email'
+                                    placeholder='E-mail' 
+                                    label='Email'
+                                    />
+                                <InputСustom  
+                                    required
+                                    type='text'
+                                    placeholder='Ваше имя' 
+                                    label='Ваше имя' 
+                                />
+                                <InputСustom  
+                                    required
+                                    type='password'
+                                    placeholder='Пароль' 
+                                    label='Пароль' 
+                                />
+                                <InputСustom  
+                                    required
+                                    type='password'
+                                    placeholder='Повторить пароль' 
+                                    label='Повторить пароль' 
+                                />
                                 <ButtonСustom 
+                                    type='submit'
                                     color='primary'
                                     variant="contained"
                                     size='large'
@@ -59,7 +81,11 @@ export const Registration = () => {
                             </>
                             
                         }
-                        <ButtonСustom variant="text" color="primary" onClick={()  =>  setConfirm(!confirm)} >Войти в аккаунт</ButtonСustom>
+                        <ButtonСustom 
+                            variant="text" 
+                            color="primary" 
+                            onClick={()  =>  setConfirm(!confirm)} 
+                        >Войти в аккаунт</ButtonСustom>
                     </CardContent>
 
             </Card>
