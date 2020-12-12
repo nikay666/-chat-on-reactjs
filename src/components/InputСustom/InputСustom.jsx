@@ -25,7 +25,6 @@ const InputСustom = ({...props}) => {
         error={!valid}
         onChange={handlerChange}
 
-        id="outlined-basic" 
         variant="outlined"
         fullWidth={true}
         margin='normal'
