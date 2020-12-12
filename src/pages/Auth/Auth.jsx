@@ -29,7 +29,7 @@ export const Auth = () => {
                         color='textSecondary'>Пожалуйста, войдите в свой аккаунт</Typography>
                 </div>
 
-            <Card className='auth__form' elevation={8}>
+            <Card className='auth__form auth__form-login' elevation={8}>
                 <CardContent component='form' >
                 <InputСustom  
                     required

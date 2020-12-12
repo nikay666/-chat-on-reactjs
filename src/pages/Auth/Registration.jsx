@@ -35,7 +35,7 @@ export const Registration = () => {
                         color='textSecondary'>Для входа в чат, вам нужно зарегистрироваться</Typography>
                 </div>
 
-            <Card className='auth__form' elevation={8}>
+            <Card className='auth__form  auth__form-registration' elevation={8}>
 
                     <CardContent component='form' >
                         {

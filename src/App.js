@@ -24,8 +24,8 @@ function App() {
           onChange={() => setDarkMode(!darkMode)}
         />
       </div>
-      {/* <Auth palette={theme.palette}/> */}
-      <Registration/>
+      <Auth palette={theme.palette}/>
+      {/* <Registration/> */}
     </div>
     </ThemeProvider>
   );
