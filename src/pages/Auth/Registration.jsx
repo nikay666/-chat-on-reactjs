@@ -1,8 +1,10 @@
 import { Card, CardContent, makeStyles, Paper, Switch, Typography } from '@material-ui/core'
 import React from 'react'
 import { useState } from 'react'
-import ButtonСustom from '../../components/ButtonСustom/ButtonСustom'
-import InputСustom from '../../components/Input/InputСustom'
+
+import { ButtonСustom } from '../../components/ButtonСustom'
+import { InputСustom } from '../../components/InputСustom'
+
 import './auth.scss'
 
 import InfoIcon from '@material-ui/icons/Info';
@@ -49,8 +51,9 @@ export const Registration = () => {
                                 <InputСustom 
                                     required
                                     type='email'
+                                    reg={`\/d\$`}
                                     placeholder='E-mail' 
-                                    label='Email'
+                                    label='Email'                                
                                     />
                                 <InputСustom  
                                     required

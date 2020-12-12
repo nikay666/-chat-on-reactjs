@@ -1,7 +1,7 @@
 import { Card, CardContent, makeStyles, Paper, Switch, Typography } from '@material-ui/core'
 import React from 'react'
-import ButtonСustom from '../../components/ButtonСustom/ButtonСustom'
-import InputСustom from '../../components/Input/InputСustom'
+import { ButtonСustom } from '../../components/ButtonСustom'
+import { InputСustom } from '../../components/InputСustom'
 import './auth.scss'
 
 

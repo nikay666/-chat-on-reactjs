@@ -15,7 +15,6 @@ const  useStyles = makeStyles({
 
   
 const ButtonСustom = (props) => {
-
     const classes = useStyles()
     return (
         <BaseButton  
@@ -30,4 +29,5 @@ const ButtonСustom = (props) => {
 ButtonСustom.propTypes = {
     className: propTypes.string
 }
+
 export default ButtonСustom;

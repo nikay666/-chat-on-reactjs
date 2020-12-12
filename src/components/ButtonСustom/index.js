@@ -1,2 +1,6 @@
-export {default as ButtonСustom} from './Button';
-// export default Button;
+// export {default as ButtonСustom} from './ButtonСustom';
+// import ButtonСustom from './ButtonСustom';
+
+// export default ButtonСustom;
+
+export {default as ButtonСustom} from './ButtonСustom'
