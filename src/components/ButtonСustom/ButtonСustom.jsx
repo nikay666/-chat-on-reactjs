@@ -1,6 +1,5 @@
 import React from 'react'
-import propTypes from 'prop-types'
-import { Button as BaseButton, Button, makeStyles } from '@material-ui/core'
+import {  Button, makeStyles } from '@material-ui/core'
 import './Button.scss'
 import classNames from 'classnames'
 

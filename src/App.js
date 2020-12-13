@@ -1,15 +1,16 @@
-import {  createMuiTheme, Switch, ThemeProvider } from '@material-ui/core';
+import {  Switch } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 import React, { useState } from 'react';
 import './App.scss';
 import { Auth } from './pages/Auth/Auth';
 import { Registration } from './pages/Auth/Registration';
 import { createTheme } from './util/themeSettings';
 
+
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   
   const theme = createTheme(darkMode)
-
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
@@ -20,7 +21,7 @@ function App() {
         />
       </div>
       {/* <Auth palette={theme.palette}/> */}
-      <Registration/>
+      <Registration theme={theme} />
     </div>
     </ThemeProvider>
   );
