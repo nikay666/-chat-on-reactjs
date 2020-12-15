@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
 import { Auth } from './pages/Auth/Auth';
-import { Registration } from './pages/Auth/Registration';
 import { createTheme } from './util/themeSettings';
 
 
@@ -22,8 +21,7 @@ function App() {
             onChange={() => setDarkMode(!darkMode)}
           />
         </div>
-        {/* <Auth palette={theme.palette}/> */}
-        <Registration theme={theme} />
+        <Auth/>
       </div>
       </ThemeProvider>
     </Router>
