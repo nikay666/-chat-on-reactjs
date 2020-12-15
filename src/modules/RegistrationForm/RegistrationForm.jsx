@@ -31,7 +31,6 @@ const RegistrationForm = () => {
                             <InputСustom 
                                 required
                                 type='email'
-                                reg={`\/d\$`}
                                 placeholder='E-mail' 
                                 label='Email'                                
                                 />
