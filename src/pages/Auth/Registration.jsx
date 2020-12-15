@@ -8,6 +8,7 @@ import { InputСustom } from '../../components/InputСustom'
 import './auth.scss'
 
 import InfoIcon from '@material-ui/icons/Info';
+import { Link } from 'react-router-dom'
 
 const  useStyles = makeStyles({
     root:  {
@@ -87,8 +88,11 @@ export const Registration = () => {
                         <ButtonСustom 
                             variant="text" 
                             color="primary" 
+                            component={Link} 
+                            to='/login'
                             onClick={()  =>  setConfirm(!confirm)} 
-                        >Войти в аккаунт</ButtonСustom>
+                        >
+                        Войти в аккаунт</ButtonСustom>
                     </CardContent>
 
             </Card>

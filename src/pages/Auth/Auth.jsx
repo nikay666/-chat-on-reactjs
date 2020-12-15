@@ -50,7 +50,12 @@ export const Auth = () => {
                     size='large'
                     fullWidth={true}
                 >Войти в аккаунт</ButtonСustom>
-                    <ButtonСustom variant="text" color="primary">Зарегистрироваться</ButtonСustom>
+                    <ButtonСustom 
+                        variant="text" 
+                        color="primary"
+                        component={Link}
+                        to='registration'
+                    >Зарегистрироваться</ButtonСustom>
                 </CardContent>
             </Card>
         </Paper>
