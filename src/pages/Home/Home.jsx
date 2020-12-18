@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Home = () => {
     return (
-        <div>
-            
+        <div className='main'>
+            <h1>Hello world!</h1>
         </div>
     )
 }

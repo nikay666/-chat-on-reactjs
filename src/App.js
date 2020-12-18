@@ -1,9 +1,10 @@
 import {  Switch } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch as RouterSwitch} from 'react-router-dom';
 import './App.scss';
 import { Auth } from './pages/Auth/Auth';
+import { Home } from './pages/Home/Home';
 import { createTheme } from './util/themeSettings';
 
 
@@ -21,7 +22,17 @@ function App() {
             onChange={() => setDarkMode(!darkMode)}
           />
         </div>
-        <Auth/>
+        <RouterSwitch>
+          <Route
+            exact 
+            path={["/login", "/registration"]}
+            component={Auth}
+          />
+          <Route
+          path='/'
+          component={Home}
+          />
+        </RouterSwitch>
       </div>
       </ThemeProvider>
     </Router>

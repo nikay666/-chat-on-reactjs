@@ -9,7 +9,7 @@ import { InputСustom } from '../../components/InputСustom'
 
 
 const RegistrationForm = () => {
-    const [confirm, setConfirm] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     return (
         <>
@@ -23,7 +23,7 @@ const RegistrationForm = () => {
             <Card className='auth__form  auth__form-registration' elevation={8}>
                 <CardContent component='form' >
                     {
-                        confirm ?  <>
+                        success ?  <>
                             <InfoIcon className='icon-auth' color="primary"  fontSize="large" />
                             <Typography variant='h3' color='textPrimary'>Подтвердите свой аккаунт</Typography>
                             <Typography  color='textSecondary'>На Вашу почту отправлено письмо с ссылкой на подтверждениие аккаунта.</Typography>
@@ -58,6 +58,7 @@ const RegistrationForm = () => {
                                 variant="contained"
                                 size='large'
                                 fullWidth={true}
+                                onClick={()  =>  setSuccess(!success)} 
                             >Зарегистрироваться</ButtonСustom>
                     
                         </>
@@ -68,7 +69,6 @@ const RegistrationForm = () => {
                         color="primary" 
                         component={Link} 
                         to='/login'
-                        onClick={()  =>  setConfirm(!confirm)} 
                     >
                     Войти в аккаунт</ButtonСustom>
                 </CardContent>
