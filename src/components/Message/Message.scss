@@ -1,6 +1,8 @@
 $mr_avatar: 13px;
 
 .message{
+    $self: &;
+
     display: flex;
     align-items: flex-end;
     margin: 20px 0;
@@ -8,13 +10,12 @@ $mr_avatar: 13px;
     &__avatar{
         margin-left: $mr_avatar;
         margin-right: $mr_avatar;
-
     }
 
     &__content{
         position: relative;
     }
-
+    
     &__bubble{
         border-radius: 12px 12px 12px 0px;
         padding: 9px 20px 10px 17px;
@@ -38,5 +39,18 @@ $mr_avatar: 13px;
         font-size: 12px;
         font-weight: normal;
         text-align: left;
+    }
+
+    &--isme{
+        flex-direction: row-reverse;
+
+        #{$self}__bubble{
+            border-radius: 12px 12px 0px 12px;
+        }
+        #{$self}__date{
+            right: 0;
+            left: auto;
+        }
+
     }
 }

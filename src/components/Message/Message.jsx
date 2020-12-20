@@ -12,7 +12,11 @@ const useStyles = makeStyles({
     bubble: theme => ({
         backgroundColor:  theme.palette.primary.light,
         color: theme.palette.primary.contrastText,
-        boxShadow: theme.shadows[1]
+    }),
+    bubbleMe: theme => ({
+        backgroundColor:  theme.palette.background.paper,
+        color: theme.palette.text.primary,
+        border: `1px solid ${theme.palette.grey[300]}` 
     }),
     date: theme => ({
         color: theme.palette.text.hint
@@ -34,7 +38,9 @@ const Message = ({avatar, user = {}, text, date, isMe}) => {
                 title={user.name}
             />
           <div className="message__content">
-              <div className={classNames('message__bubble', classes.bubble)} >
+              <div 
+                className={classNames('message__bubble', classes.bubble, {[`${classes.bubbleMe}`]: isMe })} 
+                >
                 <p className="message__text">{text}</p>
               </div>
               <span className={classNames("message__date", classes.date)}>{formatDistanceToNow(date, {addSuffix: true, locale: ru })}</span>
