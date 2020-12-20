@@ -21,6 +21,7 @@ export const Home = () => {
                     date={date1}
                     user={{name: 'Nika'}}
                     isMe={true}
+                    isReaded={true}
                 />
 
                 <Message 
@@ -29,6 +30,7 @@ export const Home = () => {
                     date={date2}
                     user={{name: 'Nika'}}
                     isMe={false}
+                    isReaded={false}
                 />
                 
             </Paper>

@@ -3,6 +3,8 @@ import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { formatDistanceToNow } from 'date-fns'
+import DoneAllIcon from '@material-ui/icons/DoneAll';
+import DoneIcon from '@material-ui/icons/Done';
 
 import './Message.scss'
 import { ru } from 'date-fns/esm/locale'
@@ -20,13 +22,17 @@ const useStyles = makeStyles({
     }),
     date: theme => ({
         color: theme.palette.text.hint
+    }),
+    done: theme => ({
+       color: theme.palette.primary.light,
+       fontSize: '14px'
     })
 
 })
 
 
 
-const Message = ({avatar, user = {}, text, date, isMe}) => {
+const Message = ({avatar, user = {}, text, date, isMe, isReaded}) => {
     const  theme  = useTheme()
     const classes = useStyles(theme)
     
@@ -45,6 +51,12 @@ const Message = ({avatar, user = {}, text, date, isMe}) => {
               </div>
               <span className={classNames("message__date", classes.date)}>{formatDistanceToNow(date, {addSuffix: true, locale: ru })}</span>
           </div>
+          {
+              isReaded 
+              ? <DoneAllIcon  className={classNames('message__done', classes.done)} /> 
+              :  <DoneIcon className={classNames('message__done', classes.done)}/>
+          }
+          
         </div>
     )
 }
