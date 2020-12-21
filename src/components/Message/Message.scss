@@ -41,6 +41,32 @@ $mr_avatar: 13px;
         text-align: left;
     }
 
+    &__attachments{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 15px;
+        gap: 5px;
+
+        &-item{
+            cursor: pointer;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+
+            &--few{
+                max-width: 48%;
+            }
+
+            img{
+                object-fit: cover;
+                height: 100%;
+                object-position: center;
+                width: 100%;
+            }
+        }
+    }
+    
     &__done{
         margin: 0 5px;
     }
@@ -55,6 +81,11 @@ $mr_avatar: 13px;
             right: 0;
             left: auto;
         }
+        #{$self}__attachments{
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+    
 
     }
 }

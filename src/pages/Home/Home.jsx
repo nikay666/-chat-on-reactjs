@@ -22,6 +22,24 @@ export const Home = () => {
                     user={{name: 'Nika'}}
                     isMe={true}
                     isReaded={true}
+                       attachments={[
+                        {
+                            name: 'image.jpg',
+                            url: 'https://memepedia.ru/wp-content/uploads/2020/09/hqdefault-1.jpg'
+                        },
+                        {
+                            name: 'image.jpg',
+                            url: 'https://source.unsplash.com/800x600/?random=6&city'
+                        },
+                        {
+                            name: 'image.jpg',
+                            url: 'https://source.unsplash.com/1600x980/?random=2&city'
+                        },
+                        {
+                            name: 'image.jpg',
+                            url: 'https://source.unsplash.com/1024x768/?random=3&city'
+                        }
+                    ]}
                 />
 
                 <Message 
@@ -31,6 +49,20 @@ export const Home = () => {
                     user={{name: 'Nika'}}
                     isMe={false}
                     isReaded={false}
+                    attachments={[
+                        {
+                            name: 'image.jpg',
+                            url: 'https://memepedia.ru/wp-content/uploads/2020/09/hqdefault-1.jpg'
+                        },
+                        {
+                            name: 'image.jpg',
+                            url: 'https://source.unsplash.com/800x600/?random=6&city'
+                        },
+                        {
+                            name: 'image.jpg',
+                            url: 'https://source.unsplash.com/1600x980/?random=2&city'
+                        },
+                    ]}
                 />
                 
             </Paper>
