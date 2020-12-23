@@ -61,21 +61,21 @@ const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments}) =
                 {
                 attachments && 
                 <div className="message__attachments" >
-
-
-                        {
-                               attachments.map((file, index) =>  (
-                                <div  key={index}   
-                                    className={classNames("message__attachments-item", {'message__attachments-item--few': attachments.length > 1})}
-                                >
-                                    <img 
-                                    src={file.url} 
-                                    title={file.name}
-                                    />
-                              </div>
-                        
-                ))
-                }
+                    {
+                        attachments.map((file, index) =>  (
+                        <div key={`${file.name}-${index}`}   
+                            className={classNames("message__attachments-item", 
+                                {'message__attachments-item--few': attachments.length > 1}
+                            )}
+                        >
+                            <img 
+                            src={file.url} 
+                            title={file.name}
+                            />
+                        </div>
+                
+                        ))
+                    }
                 </div>
             }
               </div>

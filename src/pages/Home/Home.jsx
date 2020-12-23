@@ -64,7 +64,6 @@ export const Home = () => {
                         },
                     ]}
                 />
-                
             </Paper>
         </div>
     )
