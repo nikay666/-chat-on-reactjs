@@ -1,11 +1,10 @@
-import { Avatar, GridList, GridListTile, makeStyles, ThemeProvider, useTheme } from '@material-ui/core'
+import { Avatar, makeStyles,  useTheme } from '@material-ui/core'
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { formatDistanceToNow } from 'date-fns'
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import DoneIcon from '@material-ui/icons/Done';
-import AddIcon from '@material-ui/icons/Add';
 
 import './Message.scss'
 import { ru } from 'date-fns/esm/locale'
@@ -71,6 +70,7 @@ const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments}) =
                             <img 
                             src={file.url} 
                             title={file.name}
+                            alt={file.name}
                             />
                         </div>
                 
