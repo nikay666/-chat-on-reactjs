@@ -8,6 +8,7 @@ import { ButtonСustom } from '../../components/ButtonСustom'
 import { InputСustom } from '../../components/InputСustom'
 import { useFormik } from 'formik';
 
+//TODO: deal with Formik
 
 const validate = values => {
     const errors = {}
