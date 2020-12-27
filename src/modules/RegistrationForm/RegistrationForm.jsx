@@ -106,7 +106,6 @@ const RegistrationForm = () => {
                                 helperText={formik.errors.passwordAgain ? <div>{formik.errors.passwordAgain}</div> : null} 
                                    
                             />
-                        
                             <ButtonСustom 
                                 type='submit'
                                 color='primary'
@@ -117,7 +116,6 @@ const RegistrationForm = () => {
                             >Зарегистрироваться</ButtonСustom>
                     
                         </>
-                        
                     }
                     <ButtonСustom 
                         variant="text" 
