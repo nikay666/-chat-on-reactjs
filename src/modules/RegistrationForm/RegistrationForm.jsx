@@ -23,7 +23,7 @@ const validate = values => {
         errors.email = 'Invalid email address';
     }
 
-    if(!(values.password === values.passwordAgain)){
+    if(!(values.password == values.passwordAgain)){
         errors.passwordAgain = 'Passwords do not match'
     }
 
@@ -71,8 +71,10 @@ const RegistrationForm = () => {
                                 name="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email}   
-                                                      
+                                error={formik.errors.email}       
+                                helperText={formik.errors.email ? <div>{formik.errors.email}</div> : null} 
                                 />
+                                      
                 
                             <InputСustom  
                                 required
@@ -100,12 +102,11 @@ const RegistrationForm = () => {
                                 name="passwordAgain"
                                 onChange={formik.handleChange}
                                 value={formik.values.passwordAgain}  
+                                error={formik.errors.passwordAgain}       
+                                helperText={formik.errors.passwordAgain ? <div>{formik.errors.passwordAgain}</div> : null} 
                                    
                             />
-
-                            {formik.touched.passwordAgain && formik.errors.passwordAgain ? (
-                                    <div>{formik.errors.passwordAgain}</div>
-                                ) : null}                          
+                        
                             <ButtonСustom 
                                 type='submit'
                                 color='primary'
