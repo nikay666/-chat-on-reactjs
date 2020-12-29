@@ -7,28 +7,7 @@ import { Link } from 'react-router-dom'
 import { ButtonСustom } from '../../components/ButtonСustom'
 import { InputСustom } from '../../components/InputСustom'
 import { useFormik } from 'formik';
-
-//TODO: deal with Formik
-
-const validate = values => {
-    const errors = {}
-
-    if(!values.name) {
-        errors.firstName = 'Required';
-    }
-
-    if (!values.email) {
-        errors.email = 'Required';
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-    }
-
-    if(!(values.password == values.passwordAgain)){
-        errors.passwordAgain = 'Passwords do not match'
-    }
-
-    return errors
-}
+import { validate } from '../../util/inputValidation';
 
 
 const RegistrationForm = () => {
@@ -71,10 +50,9 @@ const RegistrationForm = () => {
                                 name="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email}   
-                                error={formik.errors.email}       
-                                helperText={formik.errors.email ? <div>{formik.errors.email}</div> : null} 
+                                error={formik.errors.email ? true : false}       
+                                helperText={formik.errors.email ? formik.errors.email : null} 
                                 />
-                                      
                 
                             <InputСustom  
                                 required
@@ -102,8 +80,8 @@ const RegistrationForm = () => {
                                 name="passwordAgain"
                                 onChange={formik.handleChange}
                                 value={formik.values.passwordAgain}  
-                                error={formik.errors.passwordAgain}       
-                                helperText={formik.errors.passwordAgain ? <div>{formik.errors.passwordAgain}</div> : null} 
+                                error={formik.errors.passwordAgain ? true : false}       
+                                helperText={formik.errors.passwordAgain ? formik.errors.passwordAgain : null} 
                                    
                             />
                             <ButtonСustom 

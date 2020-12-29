@@ -7,9 +7,9 @@ const useStyles = makeStyles({
     success: theme => ({
         '& input:valid + fieldset': {
             borderColor: theme.palette.success.main,
-            borderWidth: 2,
-           
+            borderWidth: 2
         }
+    
     })
 })
 const InputСustom = ({...props}) => {
