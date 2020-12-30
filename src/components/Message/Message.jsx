@@ -12,13 +12,12 @@ import { ru } from 'date-fns/esm/locale'
 
 const useStyles = makeStyles({
     bubble: theme => ({
-        backgroundColor:  theme.palette.primary.light,
-        color: theme.palette.primary.contrastText,
-    }),
-    bubbleMe: theme => ({
         backgroundColor:  theme.palette.background.paper,
         color: theme.palette.text.primary,
-        border: `1px solid ${theme.palette.grey[300]}` 
+    }),
+    bubbleMe: theme => ({
+        backgroundColor:  theme.palette.secondary.light,
+        color: theme.palette.primary.contrastText,
     }),
     date: theme => ({
         color: theme.palette.text.hint
@@ -38,11 +37,11 @@ const useStyles = makeStyles({
 
 
 
-const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments}) => {
+const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments, isTyping}) => {
     const  theme  = useTheme()
     const classes = useStyles(theme)
     
-    console.log(theme.spacing)
+    console.log(theme.palette)
 
     return (
         <div className={classNames('message', {'message--isme': isMe})}>
@@ -99,7 +98,8 @@ Message.propTypes = {
     date: PropTypes.object.isRequired,
     isMe: PropTypes.bool.isRequired,
     isReaded: PropTypes.bool.isRequired,
-    attachments:  PropTypes.array
+    attachments:  PropTypes.array,
+    isTyping: PropTypes.bool
 
 }
 
