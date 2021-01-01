@@ -20,7 +20,21 @@ $mr_avatar: 13px;
         border-radius: 12px 12px 12px 0px;
         padding: 9px 20px 10px 17px;
         width: max-content;
-        max-width: 600px;
+        max-width: 50vw;
+
+        &--attachments{
+            padding: 1px 1px 10px 1px;
+        }
+
+        &--without{
+            padding: 0;
+            border-radius: 12px;
+
+            & .message__attachments{
+                margin-bottom: 0;
+
+            }
+        }
     }
 
     &__text{
@@ -28,6 +42,7 @@ $mr_avatar: 13px;
         font-weight: normal;
         text-align: left;
         line-height: 140%;
+        margin: 0 5px;
     }
 
     &__date{
@@ -46,17 +61,20 @@ $mr_avatar: 13px;
         flex-wrap: wrap;
         width: 100%;
         margin-bottom: 10px;
-        margin-top: 10px;
-        gap: 5px;
+        gap: 3px;
 
         &-item{
             cursor: pointer;
             max-width: 100%;
             overflow: hidden;
-            border-radius: 5px;
+            border-radius: 10px;
 
             &--few{
-                max-width: 49%;
+                max-width: 49.5%;
+
+                @media (max-width: 780px) {
+                    max-width: 48%;
+                }
             }
 
             img{
@@ -74,8 +92,8 @@ $mr_avatar: 13px;
 
     &__typing{
         & .dot{
-            height: 8px;
-            width: 8px;
+            height: 6px;
+            width: 6px;
             border-radius: 50%;
 
             display: inline-block;
@@ -98,12 +116,16 @@ $mr_avatar: 13px;
             }
         }
     }
-    
+
     &--isme{
         flex-direction: row-reverse;
 
         #{$self}__bubble{
             border-radius: 12px 12px 0px 12px;
+            &--without{
+                border-radius: 12px;
+
+            }
         }
         #{$self}__date{
             right: 0;
@@ -114,6 +136,7 @@ $mr_avatar: 13px;
             justify-content: flex-end;
         }
     }
+
 }
 
 @keyframes typingAnimation {

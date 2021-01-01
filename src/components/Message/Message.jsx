@@ -53,16 +53,23 @@ const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments, is
     console.log(theme.palette)
 
     return (
-        <div className={classNames('message', {'message--isme': isMe}, {'message--is-typing': isTyping})}>
+        <div className={classNames('message', 
+            {'message--isme': isMe}, 
+            {'message--is-typing': isTyping})}
+        >
             <Avatar 
                 className='message__avatar'  
                 src={avatar}
                 title={user.name}
             />
           <div className="message__content">
-
-              <div 
-                className={classNames('message__bubble', classes.bubble, {[`${classes.bubbleMe}`]: isMe })} 
+            <div 
+                className={classNames('message__bubble', 
+                    classes.bubble, 
+                    {[`${classes.bubbleMe}`]: isMe},
+                    {'message__bubble--attachments': attachments},
+                    {'message__bubble--without': (!text && !isTyping)}
+                )} 
                 >
                      {
                 attachments && 
