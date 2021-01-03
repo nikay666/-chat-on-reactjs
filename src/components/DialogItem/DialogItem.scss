@@ -1,0 +1,63 @@
+.dialogs__item{
+    display: flex;
+    align-items: center;
+    width: 320px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &-avatar{
+        margin-right: 10px;
+    }
+
+    &-info{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        flex-grow: 1;
+        
+        & .info__block{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 3px;
+            padding: 5px;
+            width: 100%;
+
+            & .title, & .text{
+                font-size: 14px;
+                text-align: left;
+            }
+   
+            & .title, & .time, & .text, & .status-read{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            & .time{
+                font-size: 12px;
+            }
+            & .status-read{
+
+            }
+            .status-count{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 14px;    
+                height: 14px;
+                font-size: 10px;
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+
+    }   
+
+    
+}

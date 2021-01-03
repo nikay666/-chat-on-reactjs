@@ -2,12 +2,16 @@ import { Avatar, makeStyles,  useTheme } from '@material-ui/core'
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import { formatDistanceToNow } from 'date-fns'
+
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import DoneIcon from '@material-ui/icons/Done';
 
 import './Message.scss'
-import { ru } from 'date-fns/esm/locale'
+import { Time } from '../Time';
+import { StatusRead } from '../StatusRead';
+
+
+
 
 
 const useStyles = makeStyles({
@@ -104,16 +108,11 @@ const Message = ({avatar, user = {}, text, date, isMe, isReaded, attachments, is
               </div>
              {
                 date  && <span className={classNames("message__date", classes.date)}>
-                 {formatDistanceToNow(date, {addSuffix: true, locale: ru })}
+                 <Time date={date}/>
                </span>
              } 
           </div>
-          {
-              isReaded 
-              ? <DoneAllIcon  className={classNames('message__done', classes.done)} /> 
-              :  <DoneIcon className={classNames('message__done', classes.done)}/>
-          }
-    
+            <StatusRead isReaded={isReaded} classes='message__done'/>
         </div>
     )
 }
